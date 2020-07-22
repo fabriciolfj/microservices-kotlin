@@ -1,4 +1,4 @@
-package com.github.fabriciolfj.productservice.api
+package com.github.fabriciolfj.productservice.api.controller
 
 import com.github.fabriciolfj.productservice.domain.entity.Product
 import com.github.fabriciolfj.productservice.domain.service.ProductService
