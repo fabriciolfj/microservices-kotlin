@@ -29,10 +29,12 @@ class ProductServiceImpl: ProductService {
                 .toFlux()
     }
 
-    override fun create(productMono: Product): Mono<*> {
+    override fun create(productMono: Product): Mono<Product> {
         return Mono.just(productMono)
-                .map { initialProducts[it.id] = it }
-                .toMono()
+                .flatMap {
+                    initialProducts[it.id] = it
+                    Mono.just(productMono)
+                }
     }
 
 }

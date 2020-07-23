@@ -7,5 +7,5 @@ import reactor.core.publisher.Mono
 interface ProductService {
     fun getProduct(id: Int) : Mono<Product?>
     fun searchProducts(description: String): Flux<Product>
-    fun create(productMono: Product) : Mono<*>
+    fun create(productMono: Product) : Mono<Product>
 }
