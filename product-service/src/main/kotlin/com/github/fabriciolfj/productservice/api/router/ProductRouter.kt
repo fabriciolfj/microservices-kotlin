@@ -18,7 +18,14 @@ class ProductRouter {
             GET("/{id}") {
                 productHandler.getProduct(it)
             }
+            GET("/") {
+                productHandler.findAll(it)
+            }
             POST("/", productHandler::createProduct)
+            DELETE("/{id}") {
+                productHandler.deleteById(it)
+            }
+            PUT("/{id}", productHandler::update)
         }
         "/productsfunc".nest {
             GET("/") {

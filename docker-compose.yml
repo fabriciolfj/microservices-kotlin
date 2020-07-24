@@ -1,0 +1,29 @@
+version: '2.1'
+
+services:
+  mongodb:
+    networks:
+    - my-network
+    image: mongo:3.6.9
+    mem_limit: 350m
+    ports:
+      - "27017:27017"
+    command: mongod --smallfiles
+    healthcheck:
+      test: "mongo --eval 'db.stats().ok'"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  product:
+    networks:
+    - my-network
+    build: product-service
+    mem_limit: 350m
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+    - 8080:8080
+
+networks:
+  my-network:
+    name: my-network

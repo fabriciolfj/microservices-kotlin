@@ -1,1 +1,13 @@
+spring:
+  data.mongodb:
+    host: localhost
+    port: 27017
+    database: local
 
+---
+spring.profiles: docker
+spring:
+  data.mongodb:
+    host: mongodb
+    port: 27017
+    database: local

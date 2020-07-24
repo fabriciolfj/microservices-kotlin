@@ -16,7 +16,7 @@ class ProductController {
     lateinit var productService: ProductService
 
     @GetMapping("/{id}")
-    fun getProduct(@PathVariable id: Int) : Mono<ResponseEntity<Product?>> {
+    fun getProduct(@PathVariable id: String) : Mono<ResponseEntity<Product?>> {
         return productService.getProduct(id)
                 .map { ResponseEntity.ok().body(it) }
                 .defaultIfEmpty(ResponseEntity.badRequest().build<Product>())
