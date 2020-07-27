@@ -10,9 +10,10 @@ Demonstrando a criação de microservices na linhaguem kotlin com spring boot.
 ```
 docker swarm init
 ```
-- Criando um service:
+- Comandos uteis:
 ```
 docker service create --replicas 1 --name helloworld alpine ping google.com
 docker service ls
+docker service rm helloworld
 ```
 
