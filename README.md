@@ -16,4 +16,6 @@ docker service create --replicas 1 --name helloworld alpine ping google.com
 docker service ls
 docker service rm helloworld
 ```
+###### jconsole
+- jconsole: monitoramento nativo da jdk
 
