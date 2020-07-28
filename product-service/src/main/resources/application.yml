@@ -4,10 +4,16 @@ spring:
     port: 27017
     database: local
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 ---
 spring.profiles: docker
 spring:
   data.mongodb:
-    host: mongodb
+    host: mongo
     port: 27017
     database: local
