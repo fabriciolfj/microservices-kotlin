@@ -19,3 +19,9 @@ docker service rm helloworld
 ###### jconsole
 - jconsole: monitoramento nativo da jdk
 
+###### openshift
+- Site para cadastro http://manage.openshift.com/
+- Utilizando linha de comando:
+```
+./oc login https://api.starter-ca-central-1.openshift.com Authentication required for https://api.starter-ca-central-1.openshift.com:443 (openshift)
+```
